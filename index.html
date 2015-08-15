@@ -1,19 +1,31 @@
-<!DOCTYPE HTML>
-<html>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-    <meta charset="utf-8" /> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Justin R Etzine</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="css/vex.css" />
     <link rel="stylesheet" href="css/vex-theme-flat-attack.css" />
 
     <link href="http://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet" type="text/css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
     <div class="content">
         <div class="gravatar-image"></div>
         <h1>Justin R Etzine</h1>
@@ -31,45 +43,13 @@
             <a title="Email Me" href="mailto:justetz@justetz.com"><i class="fa fa-envelope-square fa-2x"></i></a>
         </p>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="js/vex.combined.min.js"></script>
-    <script>
-        vex.defaultOptions.className = 'vex-theme-flat-attack';
-        var about_text = '<span class="modal-header">About Me</span><br />' +
-                'I am currently studying Computer Science and Information Technology &amp; Web ' +
-                'Science at Rensselaer Polytechnic Institute. I am a Student Senator and I ' +
-                'participate in several organizations, including the <i>The Poly</i> newspaper,' +
-                'Rensselaer Center for Open Source Software, Resident Student Association, ' +
-                'Computer Science Club, Web Technologies Group, Student Life Committee, and Hillel.' +
-                '<br /><br />' +
-                'My current focus is front-end application development. Over the Summer of 2014, ' +
-                'I worked as a Javascript Intern for Morgan Stanley, working on their internal AngularJS UI framework.' +
-                '<br />' +
-                '<span class="credits">Photo adapted from <a href="http://www.flickr.com/photos/paulobar/230134559/">here</a> ' +
-                'by tvol, and is licensed under CC BY 2.0.</span>';
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/vex.combined.min.js"></script>
+    <script src="js/vendor/trianglify.min.js"></script>
 
-        var taglines = ['RPI \'18, Computer Science', 'RPI \'18, IT & Web Science', 'Web Developer', 'AngularJS = <3'];
-        var slogan_dom = $('#slogan')
-
-        
-        $(document).ready(function() {
-            var current_index = Math.floor(Math.random() * taglines.length);
-            slogan_dom.text(taglines[current_index]);
-            setInterval(function() {
-                var new_index = current_index;
-                while(new_index == current_index) {
-                    new_index = Math.floor(Math.random() * taglines.length);
-                }
-                
-                slogan_dom.fadeOut(700, function() {
-                    $(this).text(taglines[new_index]).fadeIn(700);
-                    current_index = new_index;
-                });
-            }, 5000);
-        });
-
-
-    </script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
