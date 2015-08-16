@@ -31,8 +31,8 @@ var generateColors = function() {
 
 var generateBG = function() {
     document.body.appendChild(Trianglify({
-        width: window.innerWidth,
-        height: window.innerHeight+2,
+        width: (window.innerWidth < $('body').width() ? $('body').width() : window.innerWidth) ,
+        height: (window.innerHeight+2 < $('body').height() ? $('body').height() : window.innerHeight+2),
         cell_size: 45,
         variance: 0.8,
         x_colors: colors.x_colors,
