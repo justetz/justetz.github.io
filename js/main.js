@@ -3,18 +3,36 @@
  */
 
 var colors = {};
-var generateColors = function() {
+var generateColors = function () {
     var colorSchemes = [
-        {name: 'BlueSky', custom:true, x_colors: ['#005C97', '#2F3095', '#34357E', '#363795', '#27287E', '#363795'],
-            y_colors: ['#03696B', '#023B54', '#03696B', '#16036B', '#03696B', '#08306B', '#0A1354']},
-        {name: 'SingleShine', custom:true, x_colors: ['#16036B', '#0A1354', '#696969', '#08306B', '#023B54', '#03696B'],
-            y_colors: ['#03696B', '#023B54', '#03696B', '#16036B', '#03696B', '#08306B', '#0A1354']}
-        /*{name: 'UluruSunset', custom:true, x_colors: ['#551B10', '#FF512F', '#952F1B', '#A2331E', '#7B2717'],
-            y_colors:['#FF512F', '#551B10', '#952F1B', '#551B10', '#A2331E', '#551B10', '#7B2717']},
-        {name: 'JungleGreens', custom:true, x_colors: ['#435531', '#CAFF94', '#769556', '#80A25E', '#1F2717'],
-            y_colors:['#435531', '#CAFF94', '#769556', '#80A25E', '#1F2717']},
-        {name: 'WhoTheHellKnows', custom:true, x_colors: ['#335191', '#52332D', '#1F2B45', '#5D782A', '#73913A'],
-            y_colors: ['#335191', '#2D5250', '#453E1F', '#782A6B', '#3E273A']}*/
+        {
+            name: 'BlueSky', custom: true, x_colors: ['#005C97', '#2F3095', '#34357E', '#363795', '#27287E', '#363795'],
+            y_colors: ['#03696B', '#023B54', '#03696B', '#16036B', '#03696B', '#08306B', '#0A1354']
+        },
+        {
+            name: 'SingleShine',
+            custom: true,
+            x_colors: ['#16036B', '#0A1354', '#696969', '#08306B', '#023B54', '#03696B'],
+            y_colors: ['#03696B', '#023B54', '#03696B', '#16036B', '#03696B', '#08306B', '#0A1354']
+        }
+        /*{
+            name: 'UluruSunset',
+            custom: true,
+            x_colors: ['#551B10', '#FF512F', '#952F1B', '#A2331E', '#7B2717'],
+            y_colors: ['#FF512F', '#551B10', '#952F1B', '#551B10', '#A2331E', '#551B10', '#7B2717']
+        },
+        {
+            name: 'JungleGreens',
+            custom: true,
+            x_colors: ['#435531', '#CAFF94', '#769556', '#80A25E', '#1F2717'],
+            y_colors: ['#435531', '#CAFF94', '#769556', '#80A25E', '#1F2717']
+        },
+        {
+            name: 'WhoTheHellKnows',
+            custom: true,
+            x_colors: ['#335191', '#52332D', '#1F2B45', '#5D782A', '#73913A'],
+            y_colors: ['#335191', '#2D5250', '#453E1F', '#782A6B', '#3E273A']
+        }*/
     ];
 
     var color_index = Math.floor(Math.random() * colorSchemes.length);
@@ -29,16 +47,21 @@ var generateColors = function() {
 
 };
 
-var generateBG = function() {
+var generateBG = function () {
+    $('svg').remove();
     document.body.appendChild(Trianglify({
-        width: (window.innerWidth < $('body').width() ? $('body').width() : window.innerWidth) ,
-        height: (window.innerHeight+2 < $('body').height() ? $('body').height() : window.innerHeight+2),
+        width: (window.innerWidth < $('html').width() ? $('html').width() : window.innerWidth),
+        height: (window.innerHeight + 2 < $('html').height() ? $('html').height() : window.innerHeight + 2),
         cell_size: 45,
         variance: 0.8,
         x_colors: colors.x_colors,
         y_colors: colors.y_colors
     }).svg());
 };
+
+$(window).resize(function () {
+    generateBG();
+});
 
 vex.defaultOptions.className = 'vex-theme-flat-attack';
 var about_text = '<span class="modal-header">About Me</span><br />' +
