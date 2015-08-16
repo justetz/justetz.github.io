@@ -57,21 +57,27 @@ p {
     color: white;
 }
 
-span.credits {
-    font-size: 11px;
-    padding-top: 20px;
+p.credits {
+    font-size: 12px;
+    margin-top: 20px;
+    line-height: 110% !important;
+    text-align: left;
 }
 
 a {
     text-decoration: none;
     color: white;
 }
+a:hover {
+    text-decoration: none;
+    color: white;
+}
 
-span.credits a {
+a.credit-link {
     color: rgb(31, 43, 69);
 }
 
-span.credits a:hover {
+a.credit-link:hover {
     text-decoration: underline;
 }
 
@@ -79,10 +85,12 @@ i.fa {
     /*text-shadow: 1px 1px 3px #333333;*/
     margin-bottom: 50px;
     transition: all .3s ease;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 i.fa:hover, i.fa:focus {
-    color: rgba(108, 147, 174, 0.67);
+    /*color: rgba(108, 147, 174, 0.67);*/
+    color: white;
     text-decoration: none;
 }
 
@@ -101,10 +109,12 @@ i.fa:hover, i.fa:focus {
 
 .btn.btn-default:hover, .btn.btn-default:active, .btn.btn-default:focus {
     /*background: rgba(31, 43, 69, 0.80);*/
-    background: rgba(10, 18, 34, 0.45);
-    border: 1px solid rgba(39, 46, 60, 0.90);
+    /*background: rgba(10, 18, 34, 0.45);
+    border: 1px solid rgba(39, 46, 60, 0.90);*/
+    background: rgba(255, 255, 255, 0.8);
     /*color: rgb(61, 131, 201);*/
-    color: #bbb;
+    /*color: #bbb;*/
+    color: black;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -121,7 +131,7 @@ i.fa:hover, i.fa:focus {
 
 .vex-dialog-message {
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    /*font-size: 16px;*/
     line-height: 120%;
 }
 
@@ -132,4 +142,13 @@ i.fa:hover, i.fa:focus {
     font-weight: bold;
     padding: 0 0 15px 0;
     border: none;
+}
+
+.bottom-right {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+.bottom-right > i.fa {
+    margin-bottom: 0;
 }
